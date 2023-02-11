@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios JS</title>
-    <link rel="stylesheet" href="CSS/styleejerciciosjs.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
     <div class="container">
         <form action="" method="get" name="formulario">
@@ -29,21 +31,122 @@
                     </tr>
                     <tr>
                         <td>Su saldo total con el interes al 2% mensual es de:</td>
-                        <td><input type="text" readonly="readonly" class="input-text" name="sueldo1" id="cantidad1"></td>
-                        <td><input type="button" value="-" id="- button" onclick=""></input></td>
-                        <td><input type="text" readonly="readonly" class="input-text" name="mes" id="mes"></td>
-                        <td><input type="button" value="+" id="+ button" onclick="return meses(event)"></input></td>
+                        <td><input type="text" readonly="readonly" class="input-text" name="sueldo1" id="cantidad1">
+                        </td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="button" value="Borrar Datos" name="borrar" onclick="return borrardatos(event)"></td>
+                        <td><input type="button" value="Borrar Datos" name="borrar" onclick="return borrardatos(event)">
+                        </td>
                     </tr>
                 </table>
             </div>
         </form>
     </div>
-    <script src="JS/interes.js"></script>
+
+    <div class="container1">
+
+        <h1>Problemas Secuenciales</h1>
+
+        <!-- Inversion -->
+        <h2>Inversiones</h2>
+
+        <p>Suponga que un individuo desea invertir su capital en un banco y desea saber cuánto dinero ganara después de
+            un mes si el banco paga a razón de 2% mensual.</p>
+
+        <button type="button" id="calcularInversion">Calcular</button>
+
+        <!-- Comision -->
+        <h2>Comisiones</h2>
+
+        <p>Un vendedor recibe un sueldo base más un 10% extra por comisión de sus ventas, el vendedor desea saber cuánto
+            dinero obtendrá por concepto de comisiones por las tres ventas que realiza en el mes y el total que recibirá
+            en el mes tomando en cuenta su sueldo base y comisiones.</p>
+
+        <button type="button" id="calcularComisiones">Calcular</button>
+
+        <!-- Descuento -->
+        <h2>Descuentos</h2>
+
+        <p>Una tienda ofrece un descuento del 15% sobre el total de la compra y un cliente desea saber cuánto deberá
+            pagar finalmente por su compra.</p>
+
+        <button type="button" id="calcularDescuento">Calcular</button>
+
+        <!-- Calificaciones -->
+        <h2>Calificaciones</h2>
+
+        <p>Un alumno desea saber cuál será su calificación final en la materia algoritmos. Dicha calificación se compone
+            de los siguientes porcentajes:</p>
+
+        <ul>
+            <li>-55% del promedio de sus tres calificaciones parciales.</li>
+            <li>-30% de la calificación del examen final.</li>
+            <li>-15% de la calificación de un trabajo final.</li>
+        </ul>
+
+
+        <button type="button" id="calcularCalificacionFinal">Calcular</button>
+
+        <!-- Porcentaje de hombres y mujeres -->
+        <h2>Porcentaje de hombres y mujeres</h2>
+
+        <p>Un maestro desea saber qué porcentaje de hombres y mujeres hay en un grupo de estudiantes.</p>
+
+        <button type="button" id="calcularPorcentaje">Calcular porcentaje</button>
+
+        <!-- Edad -->
+        <h2>Edad</h2>
+
+        <p>Realizar un algoritmo que calcule la edad de una persona.</p>
+
+        <button type="button" id="calcularEdad">Calcular Edad</button>
+
+    </div>
+
+    <div class="container2">
+
+        <h1>Problemas Selectivos Compuestos</h1>
+
+        <!-- Leer 2 números y hacer operaciones -->
+        <h2>Leer 2 números y hacer operaciones</h2>
+
+        <p>Leer 2 números, si son iguales que los multiplique, si el primero es mayor que el segundo que los reste y si no que los sume.</p>
+
+        <button type="button" id="problema1">Calcular</button>
+
+        <!-- Leer 3 números e imprimir el mayor -->
+        <h2>Leer 3 números e imprimir el mayor</h2>
+
+        <p>Leer tres números diferentes e imprimir el número mayor de los tres.</p>
+
+        <button type="button" id="problema2">Calcular</button>
+
+        <!-- Calcular horas extras -->
+        <h2>Calcular horas extras</h2>
+
+        <p>Determinar la cantidad de dinero que recibirá un trabajador por concepto de las horas extras trabajadas en una empresa, sabiendo que cuando las horas de trabajo exceden de 40, <br> el resto se consideran extras y se pagan al doble de una normal cuando no exceden de 8; <br> si las horas extras exceden de 8 se pagan las primeras 8 al doble de lo que se pagan las horas normales y el resto al triple.</p>
+
+        <button type="button" id="problema3">Calcular</button>
+
+        <!-- Calcular utilidades -->
+        <h2>Calcular utilidades</h2>
+
+        <p>Calcular la utilidad que un trabajador recibe en el reparto anual de utilidades si este se le asigna como un porcentaje de su salario mensual que depende de su antigüedad en la empresa de acuerdo con lo siguiente:</p>
+
+        <ul>
+            <li>Menos de un año, 5% del salario.</li>
+            <li>1 año o más y menos de 2 años, 7% del salario.</li>
+            <li>2 años o más y menos de 5 años, 10% del salario.</li>
+            <li>5 años o más y menos de 10 años, 15% del salario.</li>
+            <li>10 años o más, 20% del salario.</li>
+        </ul>
+
+        <button type="button" id="problema4">Calcular</button>
+    </div>
+    <script src=" JS/interes.js"></script>
 
     <a href="../index.html"><span>Regresar a Menú Principal</span></a>
 </body>
+
 </html>

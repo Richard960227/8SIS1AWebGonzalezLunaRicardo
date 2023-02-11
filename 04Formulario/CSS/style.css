@@ -1,104 +1,46 @@
-p {
-    font-size: small;
-    margin: auto;
-    color: black;
-}
-
-.formulario {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-}   
-
-h1 {
-    text-align: center;
-    font-weight: 700;
-    color: whitesmoke;
-    padding-top: 20px;
-    font-size: large;
-}
-
-form {
-    background: rgba(0, 0, 0, 0.9);
-    padding: 0px 0px;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+    height: 100vh;
+  }
+  
+  .formulario {
+    text-align: left;
+    width: 500px;
+    padding: 20px;
+    background-color: #f2f2f2;
     border-radius: 10px;
-}
-
-.form {
-    width: 100%;
-    margin: auto;
-}
-
-form .grupo {
-    position: relative;
-    margin: 45px;
-}
-
-input {
-    background: none;
-    color: rgba(255, 255, 255, .6);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  }
+  
+  .label {
+    font-weight: bold;
     font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
+    margin-top: 20px;
+  }
+  
+  .input-name, .input-edad, .input-correo {
     width: 100%;
-    border: none;
-}
-
-input:focus {
-    outline: none;
-    color: whitesmoke;
-}
-
-.campo {
-    color: white;
+    padding: 10px;
+    margin-top: 10px;
     font-size: 16px;
-    position: absolute;
-    left: 5px;
-    top: 10px;
-    transition: .5s ease-in-out all;
-    pointer-events: none;
-}
-
-input:focus~.campo, 
-input:valid~.campo{
-    top: -14px;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.barra {
-    position: relative;
-    display: block;
-    width: 100%;
-}
-
-.barra::before{
-    content: "";
-    height: 2px;
-    width: 0%;
-    bottom: 0;
-    position: absolute;
-    background: whitesmoke;
-    transition: 0.3s ease width;
-    left: 0px;
-}
-
-input:focus~.barra::before{
-    width:100%;
-}
-
-button{
-    background: whitesmoke;
-    border: none;
     border-radius: 5px;
-    display: block;
-    width: 50%;
-    margin: 10px auto;
-    color: rgba(0, 0, 0, 0.9);
-    font-weight: 700;
-    height: 40px;
-    font-size: 16px;
+    border: 1px solid gray;
+  }
+  
+  input[type="submit"], input[type="reset"], a{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    background-color: green;
+    color: white;
     cursor: pointer;
-}
+  }
+  
+  input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: darkgreen;
+  }
