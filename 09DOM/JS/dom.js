@@ -6,7 +6,8 @@ window.onload = () => {
     const imagenes = [
         //aqui van las url
         "https://scontent.fmex5-1.fna.fbcdn.net/v/t39.30808-6/296168318_386014526971683_4109443879099616054_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ivgoMZRy_fEAX_k6Y06&_nc_ht=scontent.fmex5-1.fna&oh=00_AfA8Vzrngu_DtLCRXltaj4tXkeP3kU0URu_6blZV6gK-Tw&oe=63FCFF07",
-"https://mii90blog.files.wordpress.com/2014/09/cropped-aqua-eyes-aqua-hair-bisonbison-close-hatsune-miku-headphones-long-hair-twintails-vocaloid-white.png"
+        "https://mii90blog.files.wordpress.com/2014/09/cropped-aqua-eyes-aqua-hair-bisonbison-close-hatsune-miku-headphones-long-hair-twintails-vocaloid-white.png",
+        "https://yt3.ggpht.com/a/AATXAJzKInj2BLPHGMlWTECz8S1b5pn-r6ovEeESRg=s900-c-k-c0xffffffff-no-rj-mo"
     ];
 
     /**

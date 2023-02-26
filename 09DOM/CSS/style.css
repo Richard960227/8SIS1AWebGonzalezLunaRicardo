@@ -1,21 +1,37 @@
-nav.container {
-    display: flex;
-    border-bottom: 2px solid black;
+body{
+    background-color: gray;
+}
+
+div.container {
+    border-bottom: 15px solid black;
+    background-color: white;
 }
 
 img{
-    width: 150px;
-}
-
-div.image-container {
-    width: 100%;
+    width: 250px;
 }
 
 #mensajesControles {
-    display: inline-block;
-    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
 #mensaje {
+    height: 60px;
+    margin: 10px;
     display: inline-block;
+}
+
+button.controls-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+
+#colorValor{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
 }
