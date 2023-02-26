@@ -1,0 +1,21 @@
+nav.container {
+    display: flex;
+    border-bottom: 2px solid black;
+}
+
+img{
+    width: 150px;
+}
+
+div.image-container {
+    width: 100%;
+}
+
+#mensajesControles {
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#mensaje {
+    display: inline-block;
+}
