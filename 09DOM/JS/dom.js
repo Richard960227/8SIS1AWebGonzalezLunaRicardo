@@ -24,7 +24,7 @@ window.onload = () => {
 
     ///vamos a crear una funcion que se encargue de ir a la siguiente imagen
     let imagenActual = null;
-    /*
+    
     const imagenSiguiente = () => {
         //primero tenemos que acceder al arreglo de las imagenes que tenemos
         if(imagenActual < imagenes.length - 1){
@@ -43,9 +43,9 @@ window.onload = () => {
             imagenActual = imagenes.length - 1;
         }
         display.src = imagenes[imagenActual];
-    };*/
+    };
 
-    const crearFuncionImagen = (delta) => () => {
+    /*const crearFuncionImagen = (delta) => () => {
         if (!Array.isArray(imagenes) || imagenes.length === 0) {
             return;
         }
@@ -62,7 +62,7 @@ window.onload = () => {
     };
 
     const imagenSiguiente = crearFuncionImagen(1);
-    const imagenAnterior = crearFuncionImagen(-1);
+    const imagenAnterior = crearFuncionImagen(-1);*/
 
     const pantallaCompleta = () => {
         //esto es una promesa porque nosotros hacemos una solicitud con el request con la esperanza que nos devuelva una respuesta que en este caso es visualizar la pantalla completa
