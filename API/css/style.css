@@ -1,0 +1,19 @@
+#resources {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#resources div {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+}
+
+#resources img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
