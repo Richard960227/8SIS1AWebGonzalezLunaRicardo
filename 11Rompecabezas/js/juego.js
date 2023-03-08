@@ -65,9 +65,9 @@ function mostrarCartelGanador() {
     return false;
 }
 
-//funcion para intercambiar las dos posiciones de la pieza
+/*funcion para intercambiar las dos posiciones de la pieza
 arreglo[1][2] = arreglo[0][0];
-arreglo[0][0] = arreglo[1][2];
+arreglo[0][0] = arreglo[1][2];*/
 
 //intercambiar valores por posiciones
 function intercambiarPosicionesRompe(filaPaso1, columnaPos1, filaPaso2, columnaPos2) {
@@ -93,7 +93,7 @@ function posicionValida(fila, columna) {
 
 function moverEnDireccion(direccion) {
     var nuevaFilaPiezaVacia;
-    var nuevaColumnaVacia;
+    var nuevaColumnaPiezaVacia;
 
     //si se mueve hacia abjao
     if (direccion === codigos.Direccion.ABAJO) {
@@ -131,7 +131,100 @@ var codigosDireccion = {
 }
 
 function intercambiarPosiciones(fila1, columna1, fila2, columna2){
+    var pieza1 = rompe[fila1][columna1];
+    var pieza2 = rompe[fila2][columna2];
 
+    //intercambiarlos
+    intercambiarPosicionesRompe(fila1, columna1, fila2, columna2);
+    intercambiarPosiciones('pieza' + pieza1, 'pieza' + pieza2);
 }
 
+//tengo que representar esos movimientos dentro del dom
+
+function intercambiarPosicionesDOM(idpieza1, idpieza2) {
+    var elementPieza1 = document.getElementById(idpieza1);
+    var elementPieza2 = document.getElementById(idpieza2);
+
+    var padre = elementPieza1.parentNode;
+
+    var cloneElemento1 = elementPieza1.cloneNode(true);
+    var cloneElemento2 = elementPieza2.cloneNode(true);
+
+    padre.replaceChild(cloneElemento1, cloneElemento2);
+    padre.replaceChild(cloneElemento2, cloneElemento1);
+}
+
+//actualizar movimientos
+function actualizarMovimiento(direccion) {
+    ultimoMov = document.getElementById('flecha');
+    switch(direccion.nodeType) {
+        case codigosDireccion.ARRIBA:
+            ultimoMov.textContent = '1';
+            break;
+        case codigosDireccion.ABAJO:
+            ultimoMov.textContent = '2';
+            break;
+        case codigosDireccion.DERECHA:
+            ultimoMov.textContent = '3';
+            break;
+        case codigosDireccion.IZQUIERDA:
+            ultimoMov.textContent = '4';
+            break;
+    }
+}
+
+//necesito una funcion que permita agregar las instrucciones a la lista del HTML
+function mostrarInstruccionesEnlista(instruccion, idLista){
+    var ul = document.getElementById(idLista);
+    var li = document.createElement("li");
+    li.textContent = instruccion;
+    ul.appendChild("li");
+}
+
+function mezclarPiezas(veces){
+    if(veces <= 0){
+        return;
+    }
+    var direcciones = [codigosDireccion.ABAJO, codigosDireccion.ARRIBA, codigosDireccion.DERECHA, codigosDireccion.IZQUIERDA];
+
+    var direccion = direcciones[Math.floor(Math.random() * direcciones.length)]; //barajeando
+
+    moverEnDireccion(direccion);
+
+    setTimeout(function(){
+        mezclarPiezas(veces-1);
+    }, 100);
+}
+
+//vamos a capturar las teclas que este ingresando el jugador
+
+function capturarTeclas(){
+    //saber que esta moviendo
+    document.body.onkeydown = (function(evento){
+        if(evento.which === codigosDireccion.ABAJO || evento.which === codigosDireccion.ARRIBA || evento.which === codigosDireccion.DERECHA || evento.which === codigosDireccion.IZQUIERDA){
+            moverEnDireccion(evento.which);
+            actualizarMovimiento(evento.which);
+
+            var gano = checarSiGano();
+            if(gano){
+                setTimeout(function(){
+                    mostrarCartelGanador();
+                }, 500);
+            }
+            evento.preventDefault;
+        }
+    });
+}
+
+//que se inicie el rompecabezas
+function iniciar(){
+    mezclarPiezas(30);
+    capturarTeclas();
+}
+
+//ejecutamos nuestro inicio
+iniciar();
+
+//mando a llamar las instrucciones
+mostrarInstrucciones(instrucciones);
 

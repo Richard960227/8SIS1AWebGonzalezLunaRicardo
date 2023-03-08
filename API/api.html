@@ -5,14 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Final Fantasy</title>
+    <title>API de GitHub</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/101326ea39.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="resources">Final Fantasy</div>
+    <nav>
+        <img src="./logo.png" alt="" id="logo" width="50px">
+        <h1>API de GitHub</h1>
+        <form>
+            <input type="text" id="username" name="username" placeholder="Usuario de GitHub">
+            <button type="button" onclick="buscar()">Buscar</button>
+        </form>
+    </nav>
 
-    <script src="api.js"></script>
+    <div id="avatar"></div>
+    <div id="elements">
+        <p id="github"></p>
+        <p id="nombre"></p>
+        <p id="descripcion"></p>
+        <p id="seguidores"></p>
+        <p id="repos"></p>
+    </div>
+
+    <div id="repo-info">
+        <i class="fa fa-star">
+            <span id="stars"></span>
+        </i>
+    </div>
+
+    <script src="./js/api.js"></script>
 </body>
 
 </html>
