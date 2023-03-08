@@ -87,16 +87,18 @@ header h1 {
     font-family: "Chintzy";
     font-size: 30px;
     width: 80%;
+    margin: 10px;
 }
 
 .btn {
     width: 60px;
     height: 60px;
-    border-radius: 30px;
+    border-radius: 25px;
     color: #fff;
     background-color: #6390f0;
     font-weight: 900;
     vertical-align: middle;
+    margin: 5px;
 }
 
 .btn:disabled {
@@ -125,9 +127,15 @@ header h1 {
 }
 
 .pokedisplay-container {
-    background-color: #888888;
-    width: 90%;
-    height: 550px;
+    width: 80%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 25px;
+    background-image: url(../img/backgroundpokemon.jpg);
+    background-size: cover;
+    background-position: center;
+    outline: 10px outset #888888;
+    border: 20px;
 }
 
 .pokemon-type {
