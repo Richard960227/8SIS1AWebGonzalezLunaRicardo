@@ -2,21 +2,21 @@ body {
     margin: 0;
     color: #000;
     background-color: #00265f;
+    font-family: "Chintzy";
 }
 
 @font-face {
     font-family: "Chintzy";
-    src: url("fonts/chintzy-webfont.eot");
-    src: url("fonts/chintzy-webfont.eot?#iefix") format("embedded-opentype"),
-    url("fonts/chintzy-webfont.woff") format("woff"),
-    url("fonts/chintzy-webfont.ttf") format("truetype"),
-    url("fonts/chintzy-webfont.svg#MicrosoftYaHei") format("svg");
+    src: url("../fonts/chintzy-webfont.eot");
+    src: url("../fonts/chintzy-webfont.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/chintzy-webfont.woff") format("woff"),
+    url("../fonts/chintzy-webfont.ttf") format("truetype"),
+    url("../fonts/chintzy-webfont.svg#MicrosoftYaHei") format("svg");
 }
 
 header {
     width: 100%;
     color: white;
-    font-family: "Chintzy";
     font-size: 60px;
 }
 
