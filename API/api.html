@@ -7,37 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API de GitHub</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://kit.fontawesome.com/101326ea39.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
 </head>
 
 <body>
-    <nav>
-        <img src="./logo.png" alt="" id="logo" width="50px">
-        <h1>API de GitHub</h1>
-        <form>
-            <input type="text" id="username" name="username" placeholder="Usuario de GitHub">
-            <button type="button" onclick="buscar()">Buscar</button>
+
+
+    <nav class="main-logo">
+        <img src="./images/logo.png" alt="" class="logo">
+        <h1>Búsqueda de Usuarios de GitHub</h1>
+        <form onsubmit="buscar(); return false;">
+            <input type="text" id="language" placeholder="Lenguaje de Programación">
+            <button type="submit"><img src="./images/lupa.png" alt=""></button>
         </form>
     </nav>
 
-    <div id="avatar"></div>
-    <div id="elements">
-        <p id="github"></p>
-        <p id="nombre"></p>
-        <p id="descripcion"></p>
-        <p id="seguidores"></p>
-        <p id="repos"></p>
-    </div>
+    <p>Busca, Conoce, Aprende y Mucho Más...</p>
 
-    <div id="repo-info">
-        <i class="fa fa-star">
-            <span id="stars"></span>
-        </i>
+    <div id="githubs" class="githubs">
+        <div id="user-popup"></div>
     </div>
 
     <script src="./js/api.js"></script>
 
-    <a href="../index.html"><span>Regresar a Menú Principal</span></a>
+    <footer>
+        <a href="../index.html"><img src="./images/volver.png" alt="" href="../index.html"></a>
+    </footer>
+
 </body>
 
 </html>

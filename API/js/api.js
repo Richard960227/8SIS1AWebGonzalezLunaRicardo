@@ -1,50 +1,52 @@
 function buscar() {
-  const username = document.getElementById("username").value;
+  const language = document.getElementById("language").value;
+  const url = `https://api.github.com/search/repositories?q=language:${language}&sort=stars&order=desc`;
 
-  const url = `https://api.github.com/users/${username}`;
-
+  alert("Conoce Usuarios de GitHub en el Lenguaje de Programacion que buscas, si tu busqueda no cuenta con información actualiza o intentalo más tarde, ya que responde a varias solicitudes.");
+  
   fetch(url)
     .then(response => response.json())
     .then(data => {
+      const repos = data.items;
 
-      const avatarUrl = data.avatar_url;
-      const avatarElement = document.getElementById("avatar");
+      // Obtener los usuarios que han creado los repositorios con mejor calificación
+      const users = repos.map(repo => repo.owner.login);
 
-      avatarElement.innerHTML = `<img src="${avatarUrl}">`;
-      document.getElementById("github").innerHTML = "GitHub: " + data.login;
-      document.getElementById("nombre").innerHTML = "Nombre: " + (data.name ? data.name : "Información no disponible");
-      document.getElementById("descripcion").innerHTML = "Descripción: " + (data.bio ? data.bio : "Información no disponible");
-      document.getElementById("seguidores").innerHTML = "Seguidores: " + (data.followers ? data.followers : "Información no disponible");
-      document.getElementById("repos").innerHTML = "Repos públicos: " + (data.public_repos ? data.public_repos : "Información no disponible");
+      // Obtener información de cada usuario
+      Promise.all(users.map(user => fetch(`https://api.github.com/users/${user}`)))
+        .then(responses => Promise.all(responses.map(res => res.json())))
+        .then(users => {
+          // Crear un elemento div para cada usuario
+          const userElements = users.map(user => {
+            const element = document.createElement("div");
+            element.classList.add("user-item"); // Agregar clase CSS
+            element.innerHTML = `
+              <div class="avatar-container">
+                <img class="avatar" src="${user.avatar_url}">
+              </div>
+              <div class="user-info">
+                <h3>${user.name ? user.name : "Información no disponible"}</h3>
+                <p>GitHub: ${user.login}</p>
+                <p>Descripción: ${user.bio ? user.bio : "Información no disponible"}</p>
+                <p>Seguidores: ${user.followers ? user.followers : "Información no disponible"}</p>
+                <p>Repos públicos: ${user.public_repos ? user.public_repos : "Información no disponible"}</p>
+              </div>
+            `;
+            return element;
+          });
 
-      return fetch(data.repos_url);
-
+          // Actualizar el contenido del elemento "githubs" con la lista de usuarios
+          const userContainer = document.getElementById("githubs");
+          userContainer.innerHTML = '';
+          if (userElements.length > 0) {
+            userElements.forEach(element => {
+              userContainer.appendChild(element);
+            });
+          } else {
+            userContainer.innerHTML = "Sin usuarios encontrados.";
+          }
+          
+        })
     })
-
-    .then(response => response.json())
-    .then(repos => {
-      // Sumar el número total de estrellas de los repositorios públicos
-      const stars = repos.reduce((total, repo) => total + repo.stargazers_count, 0);
-
-      // Actualizar el contenido del elemento "stars"
-      const starsContainer = document.getElementById("stars");
-      if (stars > 0) {
-        const starsElement = document.createElement("div");
-
-        for (let i = 0; i < stars; i++) {
-          const star = document.createElement("span");
-          star.className = "fa fa-star";
-          starsElement.appendChild(star);
-        }
-
-        starsContainer.innerHTML = '';
-        document.getElementById("stars").innerHTML = stars;
-        starsContainer.appendChild(starsElement);
-      } else {
-        document.getElementById("stars").innerHTML= "Sin Estrellas";
-      }
-
-    })
-
     .catch(error => console.error(error));
 }
