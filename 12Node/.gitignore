@@ -1,0 +1,8 @@
+# Node dependencies
+node_modules/
+
+# Bootstrap
+/bootstrap/
+
+# jQuery
+/jquery/
