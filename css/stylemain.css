@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e6e6e6;
+    padding: 30px;
+}
+
+.div_titulo {
+    background-color: #336699;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.div_body {
+    background-color: #e6e6e6;
+    color: #333333;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+}
+
+.div_practicas ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.div_practicas li {
+    margin-bottom: 10px;
+}
+
+.div_practicas a {
+    color: #336699;
+    text-decoration: none;
+}
+
+.div_practicas a:hover {
+    color: #993366;
+}

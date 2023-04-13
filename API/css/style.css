@@ -1,0 +1,185 @@
+/* Estilo del cuerpo de la página */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/fondo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Estilo del encabezado de la página */
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+nav {
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+nav h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+nav form {
+    display: flex;
+}
+
+nav input[type="text"] {
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    font-size: 1rem;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    caret-color: #28a745;
+}
+
+nav button[type="submit"] {
+    width: 50px;
+    height: 50px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav button[type="button"]:hover {
+    background-color: #218838;
+}
+
+p {
+    padding: 10px;
+}
+
+/* Estilos para el carrusel */
+.slick-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.user-item {
+    text-align: center;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.avatar-container {
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 5px solid white;
+    transition: all 0.3s ease-in-out;
+}
+
+.avatar-container:hover {
+    height: 170px;
+    width: 170px;
+}
+
+.avatar {
+    height: 100%;
+    width: auto;
+}
+
+/* Estilos para el popup */
+.githubs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.user-item {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    width: 300px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.avatar {
+    width: 100%;
+    height: auto;
+}
+
+.user-info {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.user-info p {
+    margin: 0.5rem 0;
+}
+
+.user-info p:first-child {
+    font-weight: bold;
+}
+
+footer {
+    padding: 20px;
+    text-align: left;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Query para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-position: center center;
+    }
+
+    /* Ocultar el logotipo */
+    .logo {
+        display: none;
+    }
+
+    /* Hacer que los elementos del nav se apilen verticalmente */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Agregar un margen superior al formulario */
+    nav form {
+        margin-top: 1rem;
+    }
+
+    /* Alinear el botón de búsqueda a la izquierda */
+    nav button[type="submit"] {
+        justify-content: flex-start;
+    }
+
+    /* Alinear el texto del botón de búsqueda a la izquierda */
+    nav button[type="submit"] span {
+        margin-left: 0.5rem;
+    }
+
+}

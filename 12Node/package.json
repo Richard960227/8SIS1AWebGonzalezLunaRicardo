@@ -1,0 +1,19 @@
+{
+  "name": "primerproyecto",
+  "version": "1.0.0",
+  "description": "Ejemplo para manejo de paquetes con Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tareas": "node -v && npm audit && node index.js"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "Ricardo",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.6.4"
+  }
+}

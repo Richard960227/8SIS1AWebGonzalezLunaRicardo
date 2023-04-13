@@ -1,0 +1,65 @@
+/* Establecer el estilo para todo el documento */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Establecer estilo para la clase container */
+.container {
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Establecer estilo para la clase table-content */
+.table-content {
+  margin: 20px auto;
+}
+
+/* Establecer estilo para las celdas de la tabla */
+td {
+  padding: 10px;
+}
+
+/* Establecer estilo para los input-text */
+.input-text {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* Establecer estilo para la clase container1 */
+.container1 {
+  width: 80%;
+  margin: 20px auto;
+  text-align: left;
+}
+
+/* Establecer estilo para la clase container2 */
+.container2 {
+  width: 80%;
+  margin: 20px auto;
+  text-align: left;
+}
+
+/* Establecer estilo para los botones */
+button, a {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+input[type="button"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}

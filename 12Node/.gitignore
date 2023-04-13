@@ -1,0 +1,12 @@
+# Node dependencies
+node_modules/
+
+# Ignore package.json and package-lock.json inside node_modules
+node_modules/**/package.json
+node_modules/**/package-lock.json
+
+# Bootstrap
+/bootstrap/
+
+# jQuery
+/jquery/

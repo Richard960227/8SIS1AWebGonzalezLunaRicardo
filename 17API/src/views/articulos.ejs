@@ -1,0 +1,77 @@
+<%- include('partials/_header') %>
+
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <form action="/add" method="POST">
+
+                    <label for="my-modal-3" class="btn btn-active btn-primary id=" modalArticulo">Crear</label>
+
+                    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+                    <div class="modal">
+                        <div class="modal-box relative ">
+                            <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                            <div class="form-control mt-5">
+                                <input type="text" name="nombre" placeholder="Nombre" class="input input-bordered"
+                                    id="nombre" />
+                            </div>
+                            <div class="form-control mt-5">
+                                <input type="number" name="precio" placeholder="Precio" class="input input-bordered"
+                                    id="precio" />
+                            </div>
+                            <div class="form-control mt-5">
+                                <input type="number" name="stock" placeholder="Stock" class="input input-bordered"
+                                    id="stock" />
+                            </div>
+                            <div class="form-control mt-6">
+                                <button class="btn btn-active btn-primary" type="submit">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+                <div class="grid grid-cols-5 gap-6 m-6"></div>
+                <table id="tablaArticulos" class="table mt-2 table-bordered table-striped">
+                    <thead>
+                        <tr class="text-center">
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (data) { %>
+                            <%for (var i=0; i < data.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= (i + 1) %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].nombre %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].precio %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].stock %>
+                                    </td>
+                                    <td>
+                                        <a href="/delete/<%=data[i].id %>" class="btn btn-error">Delete</a>
+                                        <a href="/update/<%=data[i].id %>" class="btn btn-warning"> Update</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include('partials/_footer') %>

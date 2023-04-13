@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de GitHub</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+</head>
+
+<body>
+
+
+    <nav class="main-logo">
+        <img src="./images/logo.png" alt="" class="logo">
+        <h1>Búsqueda de Usuarios de GitHub</h1>
+        <form onsubmit="buscar(); return false;">
+            <input type="text" id="language" placeholder="Lenguaje de Programación">
+            <button type="submit"><img src="./images/lupa.png" alt=""></button>
+        </form>
+    </nav>
+
+    <p>Busca, Conoce, Aprende y Mucho Más...</p>
+
+    <div id="githubs" class="githubs">
+        <div id="user-popup"></div>
+    </div>
+
+    <script src="./js/api.js"></script>
+
+    <footer>
+        <a href="../index.html"><img src="./images/volver.png" alt="" href="../index.html"></a>
+    </footer>
+
+</body>
+
+</html>
