@@ -2,7 +2,6 @@
   "name": "reactfront",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://richard960227.github.io/8SIS1AWebGonzalezLunaRicardo/FullStack/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
