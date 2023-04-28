@@ -28,6 +28,7 @@ controller.edit = (req, res) => {
 
     req.getConnection((err, conn) => {
         conn.query('SELECT * FROM articulo WHERE id = ?', [id], (err, articulo) => {
+            console.log(articulo);
             res.render('articulo_edit', {
                 data: articulo[0]
             });
@@ -41,10 +42,14 @@ controller.update = (req, res) => {
 
     req.getConnection((err, conn) => {
         conn.query('UPDATE articulo set ? WHERE id = ?', [newArticulo, id], (err, rows) => {
+            if (err) {
+                console.log(err);
+            }
             res.redirect('/');
         });
     });
 };
+
 
 controller.delete = (req, res) => {
     const { id } = req.params;

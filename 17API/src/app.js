@@ -21,7 +21,7 @@ app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
     password: '759213',
-    port: 3306,
+    port: '3306',
     database: 'store'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
